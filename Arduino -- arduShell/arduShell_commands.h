@@ -11,3 +11,4 @@ typedef enum {
 
 String arduShell_command_name_get(const arduShell_command_t command);
 int arduShell_command_handler(const arduShell_command_t command, String args[], const uint8_t argc);
+void arduShell_commands_help(void);

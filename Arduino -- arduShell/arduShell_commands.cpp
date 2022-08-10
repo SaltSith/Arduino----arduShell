@@ -49,3 +49,11 @@ int arduShell_command_handler(const arduShell_command_t command, String args[], 
 {
 	return cmd_list[command](args, argc);
 }
+
+void arduShell_commands_help(void)
+{
+	Serial.println("Help:");
+	for (uint8_t command = 0; command < COMMAND_LAST; command++) {
+		Serial.println("\t" + arduShell_command_names[(const arduShell_command_t)command]);
+	}
+}
