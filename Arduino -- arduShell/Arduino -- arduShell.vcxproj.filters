@@ -17,4 +17,17 @@
   <ItemGroup>
     <None Include="Arduino -- arduShell.ino" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="__vm\.Arduino -- arduShell.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="arduShell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="arduShell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
