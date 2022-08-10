@@ -1,4 +1,5 @@
 #include "arduShell_commands.h"
+#include "system.h"
 
 static const String arduShell_command_names[COMMAND_LAST]{
 	"reboot",
@@ -14,7 +15,16 @@ static int cmd_gpio(String args[], const uint8_t argc);
 
 static int cmd_reboot(String args[], const uint8_t argc)
 {
-	Serial.println("CMD reboot");
+	Serial.print("Rebooting device");
+
+	for (uint8_t i = 0; i < 5; i++) {
+		Serial.print(". ");
+		delay(250);
+	}
+
+	Serial.println("");
+
+	reboot();
 
 	return 0;
 }
