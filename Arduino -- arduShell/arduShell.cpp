@@ -1,4 +1,5 @@
 #include "arduShell.h"
+#include "arduShell_commands.h"
 
 #include <Arduino.h>
 
@@ -53,5 +54,18 @@ void arduShell_main_loop(void)
 	}
 
 	arduShell_debug(args, argc);
+
+	bool cmd_found = false;
+
+	for (uint8_t cmd = 0; cmd < COMMAND_LAST; cmd++) {
+		if (args[0] == arduShell_command_name_get((const arduShell_command_t)cmd)) {
+			int result = arduShell_command_handler((const arduShell_command_t)cmd, args, argc);
+			cmd_found = true;
+		}
+	}
+
+	if (!cmd_found) {
+		Serial.println("Help");
+	}
 }
 
