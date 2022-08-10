@@ -4,12 +4,14 @@
  Author:	marcin
 */
 
+#include "arduShell.h"
+
 // the setup function runs once when you press reset or power the board
 void setup() {
-
+	arduShell_init(115200);
 }
 
 // the loop function runs over and over again until power down or reset
 void loop() {
-  
+	arduShell_main_loop();
 }
