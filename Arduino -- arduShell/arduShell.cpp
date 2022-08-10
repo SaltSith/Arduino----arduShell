@@ -65,7 +65,7 @@ void arduShell_main_loop(void)
 	}
 
 	if (!cmd_found) {
-		Serial.println("Help");
+		arduShell_commands_help();
 	}
 }
 
