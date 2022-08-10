@@ -31,7 +31,9 @@ static int cmd_reboot(String args[], const uint8_t argc)
 
 static int cmd_uptime(String args[], const uint8_t argc)
 {
-	Serial.println("CMD uptime");
+	unsigned long int uptime = millis() / 1000;
+
+	Serial.println(String(uptime) + " seconds");
 
 	return 0;
 }
