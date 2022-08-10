@@ -40,7 +40,27 @@ static int cmd_uptime(String args[], const uint8_t argc)
 
 static int cmd_gpio(String args[], const uint8_t argc)
 {
-	Serial.println("CMD gpio");
+	if (argc == 3 && args[1] == "mode" && args[2] == "output") {
+		pinMode(args[3].toInt(), OUTPUT);
+	}
+	else if (argc == 3 && args[1] == "mode" && args[2] == "input") {
+		pinMode(args[3].toInt(), INPUT);
+	}
+	else if (argc == 2 && args[1] == "get") {
+		Serial.println(digitalRead(args[2].toInt()));
+	}
+	else if (argc == 3 && args[1] == "set") {
+		digitalWrite(args[2].toInt(), args[3].toInt());
+	}
+	else {
+		Serial.println("Usage:");
+		Serial.println("\tgpio mode <output/input> <pin> -- set pin in mode");
+		Serial.println("\t\t output - set <pin> as output");
+		Serial.println("\t\t input - set <pin> as output");
+		Serial.println("\tgpio set <pin> <1/0> -- set pin state");
+		Serial.println("\tgpio get <pin> -- get pin state");
+		return -1;
+	}
 
 	return 0;
 }
