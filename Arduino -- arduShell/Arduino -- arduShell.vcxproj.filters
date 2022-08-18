@@ -24,9 +24,18 @@
     <ClInclude Include="arduShell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="arduShell_commands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="arduShell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="arduShell_commands.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -116,10 +116,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arduShell.h" />
+    <ClInclude Include="arduShell_commands.h" />
+    <ClInclude Include="system.h" />
     <ClInclude Include="__vm\.Arduino -- arduShell.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="arduShell.cpp" />
+    <ClCompile Include="arduShell_commands.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
